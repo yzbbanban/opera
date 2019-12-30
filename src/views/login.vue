@@ -70,6 +70,7 @@ export default {
       smsLogin({ 
         account: _this.account
         }).then(res => {
+           Message.success({ message: '发送成功' });
           // 验证码倒计时
           if (!this.timer) {
             this.count = TIME_COUNT
@@ -95,12 +96,12 @@ export default {
           Message.error({ message: '请填写信息' });
           return
         }
-        var _this=this
         login({ 
             account: _this.account,
             pass: _this.pass,
             code: _this.code
         }).then(res => {
+            Message.success({ message: '登录成功' });
             sessionStorage.setItem('op-token',res.data)
             this.$router.push({ path: 'home' })
         })

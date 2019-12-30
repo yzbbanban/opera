@@ -12,7 +12,7 @@ export const constantRouterMap = [
   {
     path: '',
     name: '频道管理',
-    redirect: 'login',
+    redirect: 'home',
     component: container,
     meta: {
       title: '频道管理',
@@ -28,76 +28,6 @@ export const constantRouterMap = [
         component: () => import('@/views/home'),
         meta: {
           title: '频道管理',
-          icon: 'home',
-          noCache: true
-        },
-      },
-      {
-        path: 'menu',
-        name: '菜单',
-        component: () => import('@/views/menu'),
-        meta: {
-          title: '菜单',
-          icon: 'home',
-          noCache: true
-        },
-      },
-      {
-        path: 'role',
-        name: '角色',
-        component: () => import('@/views/role'),
-        meta: {
-          title: '角色',
-          icon: 'home',
-          noCache: true
-        },
-      },
-      {
-        path: 'admin',
-        name: '管理员',
-        component: () => import('@/views/admin'),
-        meta: {
-          title: '管理员',
-          icon: 'home',
-          noCache: true
-        },
-      },
-      {
-        path: 'trader',
-        name: '操盘手',
-        component: () => import('@/views/trader'),
-        meta: {
-          title: '操盘手',
-          icon: 'home',
-          noCache: true
-        },
-      },
-      {
-        path: 'exchange',
-        name: '交易所',
-        component: () => import('@/views/exchange'),
-        meta: {
-          title: '交易所',
-          icon: 'home',
-          noCache: true
-        },
-      },
-      {
-        path: 'account',
-        name: '账号',
-        component: () => import('@/views/account'),
-        meta: {
-          title: '账号',
-          icon: 'home',
-          noCache: true
-        },
-      },
-      {
-        path: 'pair',
-        name: '交易对',
-        component: () => import('@/views/pair'),
-        meta: {
-          title: '交易对',
           icon: 'home',
           noCache: true
         },

@@ -104,20 +104,14 @@
               :value="item.valueUser">
             </el-option>
           </el-select>
-          <!-- <el-select v-model="valueTx" filterable placeholder="线别">
+          <el-select v-model="valueTx" placeholder="线别">
             <el-option
               v-for="item in optionsTx"
               :key="item.valueTx"
               :label="item.label"
               :value="item.valueTx">
             </el-option>
-          </el-select> -->
-          <el-input style="width:30%"
-            placeholder="请输入线别"
-            v-model="valueTx"
-            clearable>
-          </el-input>
-
+          </el-select>
         </el-form-item>
         <el-form-item label="员工看板">
           <el-input v-model="formData.staffUrl"></el-input>
@@ -167,7 +161,6 @@ export default {
       currentPage:1,
       valueUser:'',
       valueTx:'',
-      option:'',
       pageSize:10,
       isShowPopup: false,
       dataList: [],
@@ -192,11 +185,6 @@ export default {
     _this.getLineList();
   },
   methods: {
-    searchBlur(e) {
-      this.valueTx = e.target.value
-      console.log('===>'+this.valueTx )
-      
-	  },
     // 添加
     addPopup () {
       this.formData = {}
@@ -206,7 +194,6 @@ export default {
     updatePopup (_scope) {
       this.formData = _scope
       this.isShowPopup = true
-      this.valueTx=this.formData.valueTx
     },
     // 执行事件
     editClick () {

@@ -6,7 +6,7 @@ import { Message } from 'element-ui'
 // 环境的切换
 // axios.defaults.baseURL = 'http://172.20.10.3:9099/';
 
-axios.defaults.baseURL = 'http://127.0.01:9092/';
+axios.defaults.baseURL = 'http://127.0.0.1:9092/';
 
 
 // 请求超时时间
@@ -65,7 +65,7 @@ export function get(url, params) {
         .then(res => {
             if(res.status==200){
                 if(res.data.code==200){
-                    Message.success({ message: ''+res.data.message });
+                    Message.success({ message: 'OK' });
                     resolve(res.data);
                 }else{
                     Message.error({ message: ''+res.data.message });
