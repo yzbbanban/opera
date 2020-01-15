@@ -28,7 +28,7 @@
             </div> -->
             <el-form-item label="" prop="code" class="pr">
               <el-input prop="code" v-model="code" placeholder="验证码"></el-input>
-              <button @click="getCode()" class="code-btn" :disabled="!show">
+              <button @click="getCode" class="code-btn" :disabled="!show">
                   <span v-show="show">发送验证码</span>
                   <span v-show="!show" class="count">{{count}} s</span>
               </button>

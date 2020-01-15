@@ -1,12 +1,14 @@
 import axios from 'axios'; 
 import QS from 'qs';
 import { Message } from 'element-ui'
+import router from '../router/index'
 
 
 // 环境的切换
 // axios.defaults.baseURL = 'http://172.20.10.3:9099/';
-
 axios.defaults.baseURL = 'http://127.0.0.1:9092/';
+
+// axios.defaults.baseURL = 'http://118.31.54.117:9092/';
 
 
 // 请求超时时间
@@ -44,6 +46,10 @@ axios.interceptors.response.use(
                 case 404:
                     Message.error({ message: '服务器被吃了⊙﹏⊙∥' });
                     break;
+                case 401:
+                    Message.error({ message: '无权限' });    
+                    router.replace({ path: '/login' })
+                    break;  
                 // 其他错误，直接抛出错误提示                
                 default:
                     Message.error({ message: '服务器被吃了⊙﹏⊙∥' + error.response.data.message });
@@ -67,6 +73,9 @@ export function get(url, params) {
                 if(res.data.code==200){
                     Message.success({ message: 'OK' });
                     resolve(res.data);
+                }else if (res.code == 401) {
+                    this.$router.push({ path: 'login' })
+                    Message.error({ message: '' + res.data.message });
                 }else{
                     Message.error({ message: ''+res.data.message });
                 }
@@ -93,6 +102,9 @@ export function post(url, params) {
                 if(res.data.code==200){
                     Message.success({ message: ''+res.data.message });
                     resolve(res.data);
+                }else if (res.code == 401) {
+                    this.$router.push({ path: 'login' })
+                    Message.error({ message: '' + res.data.message });
                 }else{
                     Message.error({ message: ''+res.data.message });
                 }

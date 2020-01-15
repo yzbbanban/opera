@@ -24,13 +24,13 @@
         </template>
       </el-table-column>
 
-      <el-table-column prop="number"
+      <!-- <el-table-column prop="number"
                        label="线别"
                        width="100">
         <template slot-scope="scope">
           <label>{{$toNormalNumber(scope.row.xid)}}</label>
         </template>
-      </el-table-column>
+      </el-table-column> -->
 
       <el-table-column prop="number"
                        label="员工看板"
@@ -95,7 +95,7 @@
       <el-form label-position="left"
                label-width="80px"
                :model="formData">
-        <el-form-item label="请选择">
+        <!-- <el-form-item label="请选择">
           <el-select v-model="valueUser" placeholder="用户">
             <el-option
               v-for="item in optionsUser"
@@ -103,7 +103,7 @@
               :label="item.label"
               :value="item.valueUser">
             </el-option>
-          </el-select>
+          </el-select> -->
           <!-- <el-select v-model="valueTx" filterable placeholder="线别">
             <el-option
               v-for="item in optionsTx"
@@ -112,24 +112,24 @@
               :value="item.valueTx">
             </el-option>
           </el-select> -->
-          <el-input style="width:30%"
+          <!-- <el-input style="width:30%"
             placeholder="请输入线别"
             v-model="valueTx"
             clearable>
-          </el-input>
+          </el-input> -->
 
-        </el-form-item>
+        <!-- </el-form-item> -->
         <el-form-item label="员工看板">
           <el-input v-model="formData.staffUrl"></el-input>
         </el-form-item>
         <el-form-item label="客户看板">
           <el-input v-model="formData.customUrl"></el-input>
         </el-form-item>
-        <el-form-item label="备注">
+        <!-- <el-form-item label="备注">
           <el-input type="textarea"
                     autosize
                     v-model="formData.remark"></el-input>
-        </el-form-item>
+        </el-form-item> -->
       </el-form>
       <span slot="footer"
             class="dialog-footer">
