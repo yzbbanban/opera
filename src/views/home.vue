@@ -95,8 +95,8 @@
       <el-form label-position="left"
                label-width="80px"
                :model="formData">
-        <!-- <el-form-item label="请选择">
-          <el-select v-model="valueUser" placeholder="用户">
+        <!-- <el-form-item label="请选择"> -->
+          <!-- <el-select v-model="valueUser" placeholder="用户">
             <el-option
               v-for="item in optionsUser"
               :key="item.valueUser"
@@ -125,11 +125,11 @@
         <el-form-item label="客户看板">
           <el-input v-model="formData.customUrl"></el-input>
         </el-form-item>
-        <!-- <el-form-item label="备注">
+        <el-form-item label="备注">
           <el-input type="textarea"
                     autosize
                     v-model="formData.remark"></el-input>
-        </el-form-item> -->
+        </el-form-item>
       </el-form>
       <span slot="footer"
             class="dialog-footer">
@@ -222,6 +222,7 @@ export default {
             remark:this.formData.remark,
         }).then(res => {
             this.$message.success('操作添加成功')
+            this.getUrlList()
         })
         this.isShowPopup = false
       } else {
@@ -235,6 +236,7 @@ export default {
             remark:this.formData.remark,
         }).then(res => {
             this.$message.success('操作修改成功')
+            this.getUrlList()
         })
         this.isShowPopup = false
       }
