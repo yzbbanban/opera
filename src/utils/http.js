@@ -7,8 +7,8 @@ import router from '../router/index'
 // 环境的切换
 // axios.defaults.baseURL = 'http://172.20.10.3:9099/';
 // axios.defaults.baseURL = 'http://127.0.0.1:9092/';
-
-axios.defaults.baseURL = 'http://118.31.54.117:9092/';
+axios.defaults.baseURL = 'http://106.13.45.232:9092/';
+// axios.defaults.baseURL = 'http://118.31.54.117:9092/';
 
 
 // 请求超时时间
